@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Student">
+	
+	<resultMap id="resultStudent" type="com.pradeep.mybatis.model.Student">
+		<constructor>
+			<idArg column="id" javaType="int"/>
+			<arg column="name" javaType="String"/>
+			<arg column="branch" javaType="String"/>
+			<arg column="percentage" javaType="int"/>
+			<arg column="phone" javaType="int"/>
+			<arg column="email" javaType="String"/>
+		</constructor>
+    </resultMap>
+    
+	
+    <select id="selectStudent" resultMap="resultStudent">
+    	SELECT ID,NAME,BRANCH,PERCENTAGE,PHONE,EMAIL from student
+    </select>
+
+</mapper>
